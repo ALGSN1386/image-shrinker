@@ -4,6 +4,8 @@ Compress and resize images in your browser. Nothing is uploaded.
 
 **→ [algsn1386.github.io/image-shrinker](https://algsn1386.github.io/image-shrinker/)**
 
+![Two images being compressed, showing 8.51 MB reduced to 58.2 KB](docs/screenshot.png)
+
 ## Why this exists
 
 Attachment limits are measured in megabytes, and the usual fix is to hand your

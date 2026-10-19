@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>image-shrinker — compress images in your browser</title>
+<meta name="description" content="Compress and resize images entirely in your browser. Nothing is uploaded to any server.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>image-shrinker</h1>
+  <p class="tagline">Compress images in your browser. Nothing leaves your device.</p>
+</header>
+
+<main>
+  <section id="dropzone" class="dropzone" tabindex="0" role="button"
+           aria-label="Drop images here, or press Enter to browse">
+    <input id="fileInput" type="file" accept="image/*" multiple hidden>
+    <p><strong>Drop images here</strong> or <button id="browseBtn" class="link" type="button">browse</button></p>
+    <p class="hint">JPEG · PNG · WebP · GIF (first frame)</p>
+  </section>
+
+  <section class="controls" aria-label="Compression settings">
+    <label>Max edge
+      <select id="maxEdge">
+        <option value="2560">2560 px</option>
+        <option value="1920" selected>1920 px</option>
+        <option value="1280">1280 px</option>
+        <option value="800">800 px</option>
+        <option value="0">keep original</option>
+      </select>
+    </label>
+
+    <label>Quality <output id="qualityOut">82%</output>
+      <input id="quality" type="range" min="40" max="95" value="82">
+    </label>
+
+    <label>Format
+      <select id="format">
+        <option value="image/jpeg" selected>JPEG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+    </label>
+  </section>
+
+  <section>
+    <div class="summary" id="summary" hidden></div>
+    <ul id="results" class="results"></ul>
+    <button id="downloadAll" class="primary" type="button" hidden>Download all</button>
+  </section>
+</main>
+
+<footer>
+  <p>Runs on the Canvas API. No server, no tracking, no uploads.
+    <a href="https://github.com/ALGSN1386/image-shrinker">Source</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
